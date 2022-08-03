@@ -9,16 +9,13 @@ import com.epam.service.EventService;
 import com.epam.service.TicketService;
 import com.epam.service.UserService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class BookingFacade {
     private final EventService eventService;
     private final TicketService ticketService;
     private final UserService userService;
-
-    public BookingFacade(EventService eventService, TicketService ticketService, UserService userService) {
-        this.eventService = eventService;
-        this.ticketService = ticketService;
-        this.userService = userService;
-    }
 
     public Event getEventById(long eventId) {
         return eventService.getEventById(eventId);

@@ -12,29 +12,14 @@ import com.epam.entity.Ticket;
 import com.epam.entity.User;
 import com.epam.parser.EntityFieldParser;
 
+import lombok.Setter;
+
+@Setter
 public class FillStorageBeanPostProcessor implements BeanPostProcessor {
     private static final Logger logger = LogManager.getLogger();
     String userMapValue;
     String eventMapValue;
     String ticketMapValue;
-
-    public void setUserMapValue(String userMapValue) {
-        this.userMapValue = userMapValue;
-    }
-
-    public void setEventMapValue(String eventMapValue) {
-        this.eventMapValue = eventMapValue;
-    }
-
-    public void setTicketMapValue(String ticketMapValue) {
-        this.ticketMapValue = ticketMapValue;
-    }
-
-    @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName)
-            throws BeansException {
-        return bean;
-    }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {

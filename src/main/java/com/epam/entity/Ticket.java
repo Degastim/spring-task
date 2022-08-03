@@ -1,21 +1,14 @@
 package com.epam.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Ticket {
-    public Ticket() {
-    }
-
     public Ticket(long userId, long eventId, int place, Category category) {
-        this.userId = userId;
-        this.eventId = eventId;
-        this.place = place;
-        this.category = category;
-    }
-
-    public Ticket(long id, long userId, long eventId, int place, Category category) {
-        this.id = id;
         this.userId = userId;
         this.eventId = eventId;
         this.place = place;
@@ -29,8 +22,8 @@ public class Ticket {
     }
 
     private long id;
-    private long eventId;
     private long userId;
-    private Category category;
+    private long eventId;
     private int place;
+    private Category category;
 }

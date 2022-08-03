@@ -14,23 +14,14 @@ import com.epam.entity.Event;
 import com.epam.entity.Ticket;
 import com.epam.entity.User;
 
+import lombok.Setter;
+
+@Setter
 public class TicketService {
     private static final Logger logger = LogManager.getLogger();
     private TicketDao ticketDao;
     private EventDao eventDao;
     private UserDao userDao;
-
-    public void setTicketDao(TicketDao ticketDao) {
-        this.ticketDao = ticketDao;
-    }
-
-    public void setEventDao(EventDao eventDao) {
-        this.eventDao = eventDao;
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     public Ticket bookTicket(Ticket ticket) {
         long eventId = ticket.getEventId();

@@ -8,13 +8,12 @@ import org.apache.logging.log4j.Logger;
 import com.epam.dao.EventDao;
 import com.epam.entity.Event;
 
+import lombok.Setter;
+
+@Setter
 public class EventService {
     private static final Logger logger = LogManager.getLogger();
     private EventDao eventDao;
-
-    public void setEventDao(EventDao eventDao) {
-        this.eventDao = eventDao;
-    }
 
     public Event getEventById(long eventId) {
         logger.info("Get Event By id");

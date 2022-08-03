@@ -9,13 +9,12 @@ import org.apache.logging.log4j.Logger;
 import com.epam.dao.UserDao;
 import com.epam.entity.User;
 
+import lombok.Setter;
+
+@Setter
 public class UserService {
     private static final Logger logger = LogManager.getLogger();
     private UserDao userDao;
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     public User getUserById(long userId) {
         logger.info("Get user by id:" + userId);
