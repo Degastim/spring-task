@@ -114,6 +114,7 @@ class EventDaoTest {
         //Then
         Assertions.assertTrue(actual);
     }
+
     @Test
     void deleteFalse() {
         //Given

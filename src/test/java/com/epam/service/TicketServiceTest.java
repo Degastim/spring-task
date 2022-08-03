@@ -26,7 +26,7 @@ class TicketServiceTest {
     void ticketService() {
         ticketDao = Mockito.mock(TicketDao.class);
         eventDao = Mockito.mock(EventDao.class);
-        userDao=Mockito.mock(UserDao.class);
+        userDao = Mockito.mock(UserDao.class);
         ticketService = new TicketService();
         ticketService.setTicketDao(ticketDao);
         ticketService.setEventDao(eventDao);
@@ -89,7 +89,7 @@ class TicketServiceTest {
         Mockito.when(ticketDao.getBookedTickets(event, 2, 1)).thenReturn(ticketList);
         List<Ticket> expected = List.of(ticket1, ticket2);
         User user1 = new User(1, "Dane", "dane@gmail.com");
-        User user2 = new User(2, "Jacob","jacob@jmail.com");
+        User user2 = new User(2, "Jacob", "jacob@jmail.com");
         Mockito.when(userDao.getUserById(1)).thenReturn(user1);
         Mockito.when(userDao.getUserById(2)).thenReturn(user2);
 
