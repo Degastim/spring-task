@@ -1,9 +1,14 @@
 package com.epam.facade;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.epam.entity.Event;
 import com.epam.entity.Ticket;
+import com.epam.entity.TicketContainer;
 import com.epam.entity.User;
 import com.epam.service.EventService;
 import com.epam.service.TicketService;
@@ -16,6 +21,8 @@ public class BookingFacade {
     private final EventService eventService;
     private final TicketService ticketService;
     private final UserService userService;
+    @Autowired
+    XMLConverter xmlConverter;
 
     public Event getEventById(long eventId) {
         return eventService.getEventById(eventId);
@@ -76,5 +83,11 @@ public class BookingFacade {
 
     public boolean cancelTicket(long ticketId) {
         return ticketService.delete(ticketId);
+    }
+
+    @Transactional
+    public void preloadTickets(String xmlFile) throws IOException {
+        TicketContainer ticketContainer = xmlConverter.convertFromXMLToObject(xmlFile);
+        ticketContainer.getTicketList().forEach(ticketService::bookTicket);
     }
 }

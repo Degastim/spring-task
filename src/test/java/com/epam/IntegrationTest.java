@@ -16,7 +16,7 @@ import com.epam.entity.User;
 import com.epam.facade.BookingFacade;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(locations = "/applicationContext.xml")
+@ContextConfiguration(locations = "/applicationContextMVC.xml")
 public class IntegrationTest {
     @Autowired
     BookingFacade bookingFacade;
