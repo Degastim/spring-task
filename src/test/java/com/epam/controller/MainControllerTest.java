@@ -27,6 +27,7 @@ public class MainControllerTest {
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
     }
+
     @Test
     public void home() throws Exception {
         this.mockMvc.perform(get("/")).andDo(print())

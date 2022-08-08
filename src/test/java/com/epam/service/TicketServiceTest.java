@@ -57,7 +57,6 @@ class TicketServiceTest {
         Assertions.assertFalse(actual);
     }
 
-
     @Test
     void getBookedTickets() {
         //Given

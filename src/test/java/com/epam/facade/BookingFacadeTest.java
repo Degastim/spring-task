@@ -22,14 +22,14 @@ class BookingFacadeTest {
     TicketService ticketService;
     UserService userService;
     BookingFacade facade;
-    XMLConverter converter;
+    XmlConverter converter;
 
     @BeforeEach
     void setup() {
         eventService = Mockito.mock(EventService.class);
         ticketService = Mockito.mock(TicketService.class);
         userService = Mockito.mock(UserService.class);
-        converter = Mockito.mock(XMLConverter.class);
+        converter = Mockito.mock(XmlConverter.class);
         facade = new BookingFacade(eventService, ticketService, userService, converter);
     }
 

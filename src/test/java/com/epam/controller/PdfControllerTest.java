@@ -18,7 +18,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = "/applicationContextMVC.xml")
 @WebAppConfiguration
-public class PDFControllerTest {
+public class PdfControllerTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;

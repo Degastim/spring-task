@@ -1,11 +1,11 @@
 package com.epam.entity;
 
-import lombok.Setter;
-
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Setter;
 
 @XmlRootElement(name = "tickets")
 @Setter

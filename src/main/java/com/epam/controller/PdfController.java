@@ -20,13 +20,13 @@ import com.epam.facade.BookingFacade;
 
 @Controller
 @RequestMapping("/pdf")
-public class PDFController {
+public class PdfController {
     private static final Logger logger = LogManager.getLogger();
     private final BookingFacade facade;
     private final PdfCreator pdfCreator;
 
     @Autowired
-    PDFController(BookingFacade facade, PdfCreator pdfCreator) {
+    PdfController(BookingFacade facade, PdfCreator pdfCreator) {
         this.facade = facade;
         this.pdfCreator = pdfCreator;
     }
@@ -39,7 +39,7 @@ public class PDFController {
         User user = new User();
         user.setId(userId);
         List<Ticket> ticketList = facade.getBookedTickets(user, pageSize, pageNum);
-        pdfCreator.printTicketsPDF(ticketList, response);
+        pdfCreator.printTicketsPdf(ticketList, response);
         return "index";
     }
 
@@ -51,7 +51,7 @@ public class PDFController {
         Event event = new Event();
         event.setId(eventId);
         List<Ticket> ticketList = facade.getBookedTickets(event, pageSize, pageNum);
-        pdfCreator.printTicketsPDF(ticketList, response);
+        pdfCreator.printTicketsPdf(ticketList, response);
         return "index";
     }
 }

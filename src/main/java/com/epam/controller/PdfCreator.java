@@ -15,7 +15,7 @@ import com.itextpdf.layout.element.Paragraph;
 
 @Component
 public class PdfCreator {
-    public void printTicketsPDF(List<Ticket> ticketList, HttpServletResponse response) throws IOException {
+    public void printTicketsPdf(List<Ticket> ticketList, HttpServletResponse response) throws IOException {
         response.setHeader("Content-Disposition", "attachment; filename=report.pdf");
         PdfWriter pdfWriter = new PdfWriter(response.getOutputStream());
         PdfDocument pdf = new PdfDocument(pdfWriter);

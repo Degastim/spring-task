@@ -37,7 +37,6 @@ public class TicketControllerTest {
                 .andExpect(view().name("tickets/ticket"));
     }
 
-
     @Test
     public void getBookedTicketsByUserId() throws Exception {
         this.mockMvc.perform(get("/tickets/byUser?userId=1&pageSize=1&pageNum=1")).andDo(print())

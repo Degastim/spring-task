@@ -39,7 +39,6 @@ public class TicketController {
         return "tickets/ticket";
     }
 
-
     @GetMapping("/byUser")
     public String getBookedTicketsByUserId(@RequestParam long userId, @RequestParam int pageSize,
                                            @RequestParam int pageNum, Model model) {

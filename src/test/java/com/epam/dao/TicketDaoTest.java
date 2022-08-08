@@ -71,7 +71,6 @@ class TicketDaoTest {
         Assertions.assertFalse(actual);
     }
 
-
     @Test
     void getBookedTickets() {
         //Given

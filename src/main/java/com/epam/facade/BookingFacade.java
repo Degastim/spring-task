@@ -22,7 +22,7 @@ public class BookingFacade {
     private final TicketService ticketService;
     private final UserService userService;
     @Autowired
-    XMLConverter xmlConverter;
+    XmlConverter xmlConverter;
 
     public Event getEventById(long eventId) {
         return eventService.getEventById(eventId);
@@ -87,7 +87,7 @@ public class BookingFacade {
 
     @Transactional
     public void preloadTickets(String xmlFile) throws IOException {
-        TicketContainer ticketContainer = xmlConverter.convertFromXMLToObject(xmlFile);
+        TicketContainer ticketContainer = xmlConverter.convertFromXmlToObject(xmlFile);
         ticketContainer.getTicketList().forEach(ticketService::bookTicket);
     }
 }
